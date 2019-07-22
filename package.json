@@ -29,7 +29,6 @@
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6",
@@ -39,6 +38,8 @@
     "leaflet": "^1.5.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-leaflet": "^2.4.0"
+    "react-leaflet": "^2.4.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   }
 }

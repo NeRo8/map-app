@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { loginAction } from '../../actions/auth';
 
 import './styles.css';
 
@@ -21,11 +24,20 @@ class Auth extends Component {
 
   handleSubmit = event => {
     const { login, password } = this.state;
+    const { authStore } = this.props;
     event.preventDefault();
-    if (login == 'nero' && password == '1234') {
-      this.props.history.push('/home');
+    if (login.length > 0 && password.length > 0) {
+      authStore.users.map((user, index) => {
+        if (login == user.username && password == user.password) {
+          this.props.history.push('/home');
+        }
+      });
     }
   };
+
+  componentDidMount() {
+    console.log(this.props.authStore);
+  }
 
   render() {
     return (
@@ -41,6 +53,7 @@ class Auth extends Component {
             />
           </label>
           <br />
+          <br />
           <label className={'label-input'}>
             Password: <br />
             <input
@@ -52,6 +65,7 @@ class Auth extends Component {
             />
           </label>
           <br />
+          <button onClick={this.props.onLoginClick}>Активировать лазер</button>
           <input type="submit" title="Log in" className={'button-submit'} />
         </form>
       </div>
@@ -59,4 +73,19 @@ class Auth extends Component {
   }
 }
 
-export default withRouter(Auth);
+const mapStateToProps = state => ({
+  authStore: state.auth
+});
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onLoginClick: () => {
+      dispatch(loginAction());
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(Auth));

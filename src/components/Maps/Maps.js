@@ -13,7 +13,7 @@ class Maps extends Component {
       <Map
         center={this.state.position}
         zoom={13}
-        style={{ width: '80vh', height: '80vh' }}
+        style={{ width: '80vh', height: '80vh', margin: '0 auto' }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

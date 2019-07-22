@@ -20,7 +20,7 @@ const routing = (
     <Router history={history}>
       <div className={'content'}>
         <Menu />
-        <div>
+        <div className={'page-content'}>
           <Route exact path="/" component={Auth} />
           <Route path="/home" component={Home} />
           <Route path="/about" component={About} />
