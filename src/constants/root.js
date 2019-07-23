@@ -21,7 +21,7 @@ const routing = (
       <div className={'content'}>
         <Menu />
         <div className={'page-content'}>
-          <Route exact path="/" component={Auth} />
+          <Route path="/" exect component={Auth} />
           <Route path="/home" component={Home} />
           <Route path="/about" component={About} />
         </div>

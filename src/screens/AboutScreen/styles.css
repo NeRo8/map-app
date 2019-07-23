@@ -1,0 +1,10 @@
+.elm-worker {
+  display: flex;
+  flex-direction: row;
+}
+.page-container {
+  height: 100%;
+  background-image: url('./background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}

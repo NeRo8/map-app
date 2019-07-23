@@ -14,9 +14,10 @@ body {
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  background-color: var(--stone_wash);
+  background-color: silver;
 }
 
 .page-content {
   width: 100%;
+  height: 100%;
 }

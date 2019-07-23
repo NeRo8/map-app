@@ -13,4 +13,16 @@
   font-size: 25px;
   font-weight: normal;
   line-height: 48px;
+  text-decoration: none;
+}
+
+.user-nav-link {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #fff;
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  font-weight: normal;
+  line-height: 48px;
+  text-decoration: none;
 }

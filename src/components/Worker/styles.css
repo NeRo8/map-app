@@ -1,0 +1,24 @@
+.worker {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: lightgrey;
+  width: 300px;
+  height: 400px;
+}
+
+.icon {
+  border-radius: 75px;
+  width: 150px;
+  height: 150px;
+}
+
+.about {
+  text-align: justify;
+  font-size: 12px;
+  font-family: Georgia, 'Times New Roman', Times, cursive;
+}

@@ -29,6 +29,15 @@ module.exports = {
         use: {
           loader: 'less-loader'
         }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
+        ]
       }
     ]
   },

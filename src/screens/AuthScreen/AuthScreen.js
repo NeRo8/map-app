@@ -9,7 +9,6 @@ import './styles.css';
 class Auth extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       login: '',
       password: ''
@@ -26,18 +25,16 @@ class Auth extends Component {
     const { login, password } = this.state;
     const { authStore } = this.props;
     event.preventDefault();
+
     if (login.length > 0 && password.length > 0) {
       authStore.users.map((user, index) => {
         if (login == user.username && password == user.password) {
+          this.props.onLoginClick(login);
           this.props.history.push('/home');
         }
       });
     }
   };
-
-  componentDidMount() {
-    console.log(this.props.authStore);
-  }
 
   render() {
     return (
@@ -65,7 +62,6 @@ class Auth extends Component {
             />
           </label>
           <br />
-          <button onClick={this.props.onLoginClick}>Активировать лазер</button>
           <input type="submit" title="Log in" className={'button-submit'} />
         </form>
       </div>
@@ -79,8 +75,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    onLoginClick: () => {
-      dispatch(loginAction());
+    onLoginClick: login => {
+      dispatch(loginAction(login));
     }
   };
 };
